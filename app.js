@@ -295,7 +295,6 @@
   });
   $('btn-roll').addEventListener('click', roll);
   $('btn-menu').addEventListener('click', () => {
-    if (!confirm('Aktuelles Spiel verlassen? Du kannst es später fortsetzen.')) return;
     setupNames = state.players.map((p) => p.name);
     show('setup');
     renderSetup();
