@@ -351,6 +351,7 @@
     rows.push('</tbody>');
 
     table.innerHTML = rows.join('');
+    lastScored = null; // nur beim ersten Zeichnen nach dem Eintragen aufleuchten
   }
 
   function escapeHtml(s) {
