@@ -108,7 +108,7 @@ button:disabled { opacity: .45; cursor: not-allowed; }
 
 /* Setup */
 .player-list { list-style: none; padding: 0; margin: 12px 0 0; display: grid; gap: 8px; }
-.player-list li { display: flex; gap: 8px; align-items: center; }
+.player-list li { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 8px; align-items: center; }
 .player-list input {
   flex: 1;
   font: inherit;
@@ -118,7 +118,17 @@ button:disabled { opacity: .45; cursor: not-allowed; }
   background: transparent;
   color: var(--ink);
 }
-.player-list input:focus { outline: none; border-color: var(--accent); }
+.player-list input { min-width: 0; width: 100%; }
+.player-list select {
+  font: inherit;
+  max-width: 8.5rem;
+  padding: 10px 8px;
+  border: 2px solid var(--line);
+  border-radius: 10px;
+  background: var(--card);
+  color: var(--ink);
+}
+.player-list input:focus, .player-list select:focus { outline: none; border-color: var(--accent); }
 .player-list .remove { padding: 8px 12px; }
 
 .highscores, .ranking { margin: 0; padding-left: 1.5em; }
@@ -157,6 +167,7 @@ button:disabled { opacity: .45; cursor: not-allowed; }
   position: relative;
   transition: transform .15s, box-shadow .15s;
 }
+.die:disabled { opacity: 1; cursor: default; }
 .die.blank { background: repeating-linear-gradient(45deg, #f5f5f4, #f5f5f4 6px, #e7e5e4 6px, #e7e5e4 12px); }
 .die.held {
   border-color: var(--held);
@@ -195,6 +206,7 @@ button:disabled { opacity: .45; cursor: not-allowed; }
 .sheet th:first-child, .sheet td:first-child { text-align: left; position: sticky; left: 0; background: var(--card); }
 .sheet thead th { font-size: .9rem; }
 .sheet thead th.active { color: var(--accent); }
+.sheet thead th small { display: block; font-weight: 400; font-size: .7rem; color: var(--muted); }
 .sheet .cat small { display: block; color: var(--muted); font-weight: 400; font-size: .75rem; }
 .sheet .sum td { font-weight: 700; background: color-mix(in srgb, var(--line) 50%, transparent); }
 .sheet .total td { font-size: 1.1rem; border-bottom: none; }

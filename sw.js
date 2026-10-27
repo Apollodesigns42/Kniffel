@@ -1,6 +1,6 @@
 // Offline-Cache: App-Dateien werden beim ersten Besuch gespeichert.
-const CACHE = 'kniffel-v1';
-const FILES = ['./', 'index.html', 'style.css', 'scoring.js', 'app.js', 'icon.svg', 'manifest.webmanifest'];
+const CACHE = 'kniffel-v2';
+const FILES = ['./', 'index.html', 'style.css', 'scoring.js', 'bot.js', 'app.js', 'icon.svg', 'manifest.webmanifest'];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(FILES)));

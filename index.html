@@ -19,10 +19,11 @@
   <main id="screen-setup" class="screen">
     <section class="card">
       <h2>Neues Spiel</h2>
-      <p class="muted">1 bis 6 Spieler – reihum an einem Gerät.</p>
+      <p class="muted">1 bis 6 Spieler – reihum an einem Gerät. Bots gibt es in drei Stärken.</p>
       <ol id="player-list" class="player-list"></ol>
       <div class="row">
         <button id="btn-add-player" class="ghost">+ Spieler</button>
+        <button id="btn-add-bot" class="ghost">+ Bot</button>
         <button id="btn-start" class="primary">Spiel starten</button>
       </div>
       <button id="btn-resume" class="ghost wide" hidden>Letztes Spiel fortsetzen</button>
@@ -77,6 +78,7 @@
   </main>
 
   <script src="scoring.js"></script>
+  <script src="bot.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

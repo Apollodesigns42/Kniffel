@@ -5,6 +5,7 @@ Das klassische Würfelspiel als Web-App – ohne Abhängigkeiten, läuft direkt 
 ## Funktionen
 
 - 1–6 Spieler reihum an einem Gerät
+- Bots in drei Stärken: leicht (Ø ca. 145 Punkte), mittel (Ø ca. 210) und schwer (Ø ca. 230)
 - Bis zu 3 Würfe pro Zug, Würfel per Antippen halten
 - Spielblock mit Punktevorschau für jedes freie Feld, Streichen mit 0 Punkten
 - Automatische Summen inkl. Bonus (35 Punkte ab 63 oben)
