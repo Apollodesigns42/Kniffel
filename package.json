@@ -1,0 +1,10 @@
+{
+  "name": "kniffel",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Kniffel-Würfelspiel als Web-App",
+  "scripts": {
+    "start": "npx --yes serve .",
+    "test": "node --test"
+  }
+}

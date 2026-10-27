@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#14532d">
+  <title>Kniffel</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>🎲 Kniffel</h1>
+    <button id="btn-menu" class="ghost" hidden>Neues Spiel</button>
+  </header>
+
+  <!-- Spieler-Setup -->
+  <main id="screen-setup" class="screen">
+    <section class="card">
+      <h2>Neues Spiel</h2>
+      <p class="muted">1 bis 6 Spieler – reihum an einem Gerät.</p>
+      <ol id="player-list" class="player-list"></ol>
+      <div class="row">
+        <button id="btn-add-player" class="ghost">+ Spieler</button>
+        <button id="btn-start" class="primary">Spiel starten</button>
+      </div>
+      <button id="btn-resume" class="ghost wide" hidden>Letztes Spiel fortsetzen</button>
+    </section>
+
+    <section class="card">
+      <h2>Bestenliste</h2>
+      <ol id="highscores" class="highscores"></ol>
+    </section>
+
+    <details class="card rules">
+      <summary>Spielregeln</summary>
+      <ul>
+        <li>Pro Zug darfst du bis zu <b>3-mal</b> würfeln. Tippe Würfel an, um sie zu halten.</li>
+        <li>Danach trägst du das Ergebnis in ein freies Feld ein – notfalls mit 0 Punkten (streichen).</li>
+        <li><b>Bonus:</b> 35 Punkte, wenn du oben mindestens 63 Punkte erreichst.</li>
+        <li>Dreier-/Viererpasch und Chance zählen die Summe aller Augen.</li>
+        <li>Full House 25, Kleine Straße (4 in Folge) 30, Große Straße (5 in Folge) 40, Kniffel (5 gleiche) 50.</li>
+        <li>Nach 13 Runden gewinnt, wer die meisten Punkte hat.</li>
+      </ul>
+      <p class="muted">Tastatur: Leertaste = würfeln, 1–5 = Würfel halten.</p>
+    </details>
+  </main>
+
+  <!-- Spiel -->
+  <main id="screen-game" class="screen" hidden>
+    <section class="card play">
+      <div class="turn-info">
+        <span id="current-player" class="current-player"></span>
+        <span id="round-info" class="muted"></span>
+      </div>
+      <div id="dice" class="dice" aria-label="Würfel"></div>
+      <button id="btn-roll" class="primary roll">Würfeln</button>
+      <p id="hint" class="hint muted"></p>
+    </section>
+
+    <section class="card sheet-wrap">
+      <table id="sheet" class="sheet"></table>
+    </section>
+  </main>
+
+  <!-- Ergebnis -->
+  <main id="screen-end" class="screen" hidden>
+    <section class="card">
+      <h2 id="winner-title"></h2>
+      <ol id="ranking" class="ranking"></ol>
+      <div class="row">
+        <button id="btn-rematch" class="primary">Revanche</button>
+        <button id="btn-new" class="ghost">Neue Spieler</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="scoring.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
